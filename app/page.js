@@ -19,7 +19,7 @@ export default function Home() {
     <main>
       <div>
         {Object.entries(mapData).map(([location]) => (
-          <button onClick={() => {
+          <button key={location} onClick={() => {
             handleLocationChange(location);
           }}>{location}</button>
         ))}
@@ -29,7 +29,7 @@ export default function Home() {
         <h1>Click on your current location to see exploration options here:</h1>
         <h2>{`Current location: ${currentLocation || 'none'}`}</h2>
         {explorationOptions.map((location) => (
-          <h4 onClick={() => handleLocationChange(location)}>{location}</h4>
+          <h4 key={location} onClick={() => handleLocationChange(location)}>{location}</h4>
         ))}
       </div>
     </main>
